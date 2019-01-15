@@ -12,7 +12,47 @@
 		6243C4DC21E87BB100ADDA74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6243C4DA21E87BB100ADDA74 /* Main.storyboard */; };
 		6243C4DE21E87BB200ADDA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6243C4DD21E87BB200ADDA74 /* Assets.xcassets */; };
 		6243C4E121E87BB200ADDA74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6243C4DF21E87BB200ADDA74 /* LaunchScreen.storyboard */; };
+		6243C4F021E87C9100ADDA74 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6243C4EF21E87C9100ADDA74 /* ReplayKit.framework */; };
+		6243C4F321E87C9100ADDA74 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6243C4F221E87C9100ADDA74 /* SampleHandler.swift */; };
+		6243C4FA21E87C9100ADDA74 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6243C4EF21E87C9100ADDA74 /* ReplayKit.framework */; };
+		6243C4FC21E87C9100ADDA74 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6243C4FB21E87C9100ADDA74 /* UIKit.framework */; };
+		6243C4FF21E87C9100ADDA74 /* BroadcastSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6243C4FE21E87C9100ADDA74 /* BroadcastSetupViewController.swift */; };
+		6243C50321E87C9100ADDA74 /* siliconmotionSetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6243C4F921E87C9100ADDA74 /* siliconmotionSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6243C50621E87C9100ADDA74 /* siliconmotion.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6243C4ED21E87C9100ADDA74 /* siliconmotion.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		62E6762D21EDBF7300E24A55 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6762C21EDBE6200E24A55 /* FileUtil.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6243C50121E87C9100ADDA74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6243C4CB21E87BB100ADDA74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6243C4F821E87C9100ADDA74;
+			remoteInfo = siliconmotionSetupUI;
+		};
+		6243C50421E87C9100ADDA74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6243C4CB21E87BB100ADDA74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6243C4EC21E87C9100ADDA74;
+			remoteInfo = siliconmotion;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6243C50D21E87C9100ADDA74 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6243C50621E87C9100ADDA74 /* siliconmotion.appex in Embed App Extensions */,
+				6243C50321E87C9100ADDA74 /* siliconmotionSetupUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6243C4D321E87BB100ADDA74 /* Replaykit_SMI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Replaykit_SMI.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +62,18 @@
 		6243C4DD21E87BB200ADDA74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6243C4E021E87BB200ADDA74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6243C4E221E87BB200ADDA74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6243C4E821E87BC000ADDA74 /* Replaykit_SMI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Replaykit_SMI.entitlements; sourceTree = "<group>"; };
+		6243C4ED21E87C9100ADDA74 /* siliconmotion.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = siliconmotion.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6243C4EF21E87C9100ADDA74 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		6243C4F221E87C9100ADDA74 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		6243C4F421E87C9100ADDA74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6243C4F921E87C9100ADDA74 /* siliconmotionSetupUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = siliconmotionSetupUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		6243C4FB21E87C9100ADDA74 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6243C4FE21E87C9100ADDA74 /* BroadcastSetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BroadcastSetupViewController.swift; sourceTree = "<group>"; };
+		6243C50021E87C9100ADDA74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6243C50E21E87C9D00ADDA74 /* siliconmotionSetupUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotionSetupUI.entitlements; sourceTree = "<group>"; };
+		6243C50F21E87CA600ADDA74 /* siliconmotion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotion.entitlements; sourceTree = "<group>"; };
+		62E6762C21EDBE6200E24A55 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +84,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6243C4EA21E87C9100ADDA74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6243C4F021E87C9100ADDA74 /* ReplayKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6243C4F621E87C9100ADDA74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6243C4FA21E87C9100ADDA74 /* ReplayKit.framework in Frameworks */,
+				6243C4FC21E87C9100ADDA74 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -39,6 +108,9 @@
 			isa = PBXGroup;
 			children = (
 				6243C4D521E87BB100ADDA74 /* Replaykit_SMI */,
+				6243C4F121E87C9100ADDA74 /* siliconmotion */,
+				6243C4FD21E87C9100ADDA74 /* siliconmotionSetupUI */,
+				6243C4EE21E87C9100ADDA74 /* Frameworks */,
 				6243C4D421E87BB100ADDA74 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				6243C4D321E87BB100ADDA74 /* Replaykit_SMI.app */,
+				6243C4ED21E87C9100ADDA74 /* siliconmotion.appex */,
+				6243C4F921E87C9100ADDA74 /* siliconmotionSetupUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,6 +128,8 @@
 		6243C4D521E87BB100ADDA74 /* Replaykit_SMI */ = {
 			isa = PBXGroup;
 			children = (
+				62E6762A21EDBE5100E24A55 /* Utils */,
+				6243C4E821E87BC000ADDA74 /* Replaykit_SMI.entitlements */,
 				6243C4D621E87BB100ADDA74 /* AppDelegate.swift */,
 				6243C4D821E87BB100ADDA74 /* ViewController.swift */,
 				6243C4DA21E87BB100ADDA74 /* Main.storyboard */,
@@ -62,6 +138,43 @@
 				6243C4E221E87BB200ADDA74 /* Info.plist */,
 			);
 			path = Replaykit_SMI;
+			sourceTree = "<group>";
+		};
+		6243C4EE21E87C9100ADDA74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6243C4EF21E87C9100ADDA74 /* ReplayKit.framework */,
+				6243C4FB21E87C9100ADDA74 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6243C4F121E87C9100ADDA74 /* siliconmotion */ = {
+			isa = PBXGroup;
+			children = (
+				6243C50F21E87CA600ADDA74 /* siliconmotion.entitlements */,
+				6243C4F221E87C9100ADDA74 /* SampleHandler.swift */,
+				6243C4F421E87C9100ADDA74 /* Info.plist */,
+			);
+			path = siliconmotion;
+			sourceTree = "<group>";
+		};
+		6243C4FD21E87C9100ADDA74 /* siliconmotionSetupUI */ = {
+			isa = PBXGroup;
+			children = (
+				6243C50E21E87C9D00ADDA74 /* siliconmotionSetupUI.entitlements */,
+				6243C4FE21E87C9100ADDA74 /* BroadcastSetupViewController.swift */,
+				6243C50021E87C9100ADDA74 /* Info.plist */,
+			);
+			path = siliconmotionSetupUI;
+			sourceTree = "<group>";
+		};
+		62E6762A21EDBE5100E24A55 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				62E6762C21EDBE6200E24A55 /* FileUtil.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,15 +187,52 @@
 				6243C4CF21E87BB100ADDA74 /* Sources */,
 				6243C4D021E87BB100ADDA74 /* Frameworks */,
 				6243C4D121E87BB100ADDA74 /* Resources */,
+				6243C50D21E87C9100ADDA74 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				6243C50221E87C9100ADDA74 /* PBXTargetDependency */,
+				6243C50521E87C9100ADDA74 /* PBXTargetDependency */,
 			);
 			name = Replaykit_SMI;
 			productName = Replaykit_SMI;
 			productReference = 6243C4D321E87BB100ADDA74 /* Replaykit_SMI.app */;
 			productType = "com.apple.product-type.application";
+		};
+		6243C4EC21E87C9100ADDA74 /* siliconmotion */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6243C50A21E87C9100ADDA74 /* Build configuration list for PBXNativeTarget "siliconmotion" */;
+			buildPhases = (
+				6243C4E921E87C9100ADDA74 /* Sources */,
+				6243C4EA21E87C9100ADDA74 /* Frameworks */,
+				6243C4EB21E87C9100ADDA74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = siliconmotion;
+			productName = siliconmotion;
+			productReference = 6243C4ED21E87C9100ADDA74 /* siliconmotion.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		6243C4F821E87C9100ADDA74 /* siliconmotionSetupUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6243C50721E87C9100ADDA74 /* Build configuration list for PBXNativeTarget "siliconmotionSetupUI" */;
+			buildPhases = (
+				6243C4F521E87C9100ADDA74 /* Sources */,
+				6243C4F621E87C9100ADDA74 /* Frameworks */,
+				6243C4F721E87C9100ADDA74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = siliconmotionSetupUI;
+			productName = siliconmotionSetupUI;
+			productReference = 6243C4F921E87C9100ADDA74 /* siliconmotionSetupUI.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +246,28 @@
 				TargetAttributes = {
 					6243C4D221E87BB100ADDA74 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					6243C4EC21E87C9100ADDA74 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					6243C4F821E87C9100ADDA74 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -113,6 +285,8 @@
 			projectRoot = "";
 			targets = (
 				6243C4D221E87BB100ADDA74 /* Replaykit_SMI */,
+				6243C4EC21E87C9100ADDA74 /* siliconmotion */,
+				6243C4F821E87C9100ADDA74 /* siliconmotionSetupUI */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +302,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6243C4EB21E87C9100ADDA74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6243C4F721E87C9100ADDA74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -135,12 +323,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62E6762D21EDBF7300E24A55 /* FileUtil.swift in Sources */,
 				6243C4D921E87BB100ADDA74 /* ViewController.swift in Sources */,
 				6243C4D721E87BB100ADDA74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6243C4E921E87C9100ADDA74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6243C4F321E87C9100ADDA74 /* SampleHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6243C4F521E87C9100ADDA74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6243C4FF21E87C9100ADDA74 /* BroadcastSetupViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6243C50221E87C9100ADDA74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6243C4F821E87C9100ADDA74 /* siliconmotionSetupUI */;
+			targetProxy = 6243C50121E87C9100ADDA74 /* PBXContainerItemProxy */;
+		};
+		6243C50521E87C9100ADDA74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6243C4EC21E87C9100ADDA74 /* siliconmotion */;
+			targetProxy = 6243C50421E87C9100ADDA74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6243C4DA21E87BB100ADDA74 /* Main.storyboard */ = {
@@ -281,7 +499,10 @@
 		6243C4E621E87BB200ADDA74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Replaykit_SMI/Replaykit_SMI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JAGYSS7E9A;
 				INFOPLIST_FILE = Replaykit_SMI/Info.plist;
@@ -289,8 +510,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "siliconmotion.Replaykit-SMI";
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.Replaykit2ForIOS11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Replaykit_SMI/Replaykit_SMI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,7 +522,10 @@
 		6243C4E721E87BB200ADDA74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Replaykit_SMI/Replaykit_SMI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JAGYSS7E9A;
 				INFOPLIST_FILE = Replaykit_SMI/Info.plist;
@@ -307,8 +533,89 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "siliconmotion.Replaykit-SMI";
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.Replaykit2ForIOS11;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Replaykit_SMI/Replaykit_SMI-Bridging-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6243C50821E87C9100ADDA74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = siliconmotionSetupUI/siliconmotionSetupUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JAGYSS7E9A;
+				INFOPLIST_FILE = siliconmotionSetupUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.Replaykit2ForIOS11.siliconmotionSetupUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6243C50921E87C9100ADDA74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = siliconmotionSetupUI/siliconmotionSetupUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JAGYSS7E9A;
+				INFOPLIST_FILE = siliconmotionSetupUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.Replaykit2ForIOS11.siliconmotionSetupUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6243C50B21E87C9100ADDA74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = siliconmotion/siliconmotion.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JAGYSS7E9A;
+				INFOPLIST_FILE = siliconmotion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.Replaykit2ForIOS11.siliconmotion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6243C50C21E87C9100ADDA74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = siliconmotion/siliconmotion.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JAGYSS7E9A;
+				INFOPLIST_FILE = siliconmotion/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Alex.Replaykit2ForIOS11.siliconmotion;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -331,6 +638,24 @@
 			buildConfigurations = (
 				6243C4E621E87BB200ADDA74 /* Debug */,
 				6243C4E721E87BB200ADDA74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6243C50721E87C9100ADDA74 /* Build configuration list for PBXNativeTarget "siliconmotionSetupUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6243C50821E87C9100ADDA74 /* Debug */,
+				6243C50921E87C9100ADDA74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6243C50A21E87C9100ADDA74 /* Build configuration list for PBXNativeTarget "siliconmotion" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6243C50B21E87C9100ADDA74 /* Debug */,
+				6243C50C21E87C9100ADDA74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
