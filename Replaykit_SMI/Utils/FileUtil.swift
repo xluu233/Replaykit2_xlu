@@ -33,6 +33,8 @@ class ReplayFileUtil
     internal class func filePath(_ fileName: String) -> String
     {
         createReplaysFolder()
+        
+        
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0] as String
         let filePath : String = "\(documentsDirectory)/Replays/\(fileName).mp4"

@@ -35,7 +35,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func start(_ sender: UIButton) {
-        
         startRecording(withFileName: "coolScreenRecording\(randomNumber)",recordingHandler: {(error) in
             print("正在录制")
         })
@@ -55,15 +54,7 @@ class ViewController: UIViewController {
         }
     }
     
-    /*
-    func Recording(withFileName fileName: String, recordingHandler: @escaping (Error?) -> Void,onCompletion: @escaping (Error?)->Void)
-    {
-        startRecording(withFileName: fileName) { (error) in
-            recordingHandler(error)
-        }
-    }*/
-    
-    
+
 
     func startRecording(withFileName fileName: String, recordingHandler:@escaping (Error?)-> Void)
     {
@@ -94,7 +85,7 @@ class ViewController: UIViewController {
                 
                // first_image.image = sample
                 
-                
+        
                 if CMSampleBufferDataIsReady(sample)
                 {
                     if self.assetWriter.status == AVAssetWriter.Status.unknown
@@ -177,13 +168,7 @@ class ViewController: UIViewController {
     @IBAction func get_first_image(_ sender: UIButton) {
     }
     
-    
-    @IBAction func start_broadcast(_ sender: UIButton) {
-    }
-    
-    
-    @IBAction func stop_broadcast(_ sender: UIButton) {
-    }
+
     
 }
 

@@ -1,9 +1,9 @@
 //
-//  FileManager.swift
-//  BugReporterTest
+//  FileUtil.swift
+//  siliconmotion
 //
-//  Created by Giridhar on 20/06/17.
-//  Copyright © 2017 Giridhar. All rights reserved.
+//  Created by AlexLu on 2019/1/17.
+//  Copyright © 2019 AlexLu. All rights reserved.
 //
 
 import Foundation
@@ -33,6 +33,8 @@ class ReplayFileUtil
     internal class func filePath(_ fileName: String) -> String
     {
         createReplaysFolder()
+        
+    
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0] as String
         let filePath : String = "\(documentsDirectory)/Replays/\(fileName).mp4"
@@ -48,5 +50,6 @@ class ReplayFileUtil
     }
     
 }
+
 
 
