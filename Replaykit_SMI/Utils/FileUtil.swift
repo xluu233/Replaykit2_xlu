@@ -38,6 +38,15 @@ class ReplayFileUtil
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0] as String
         let filePath : String = "\(documentsDirectory)/Replays/\(fileName).mp4"
+        
+        //获取分组的共享目录
+       // let groupURL: NSURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alex.Replaykit2ForIOS11")! as NSURL
+      //  let fileURL: NSURL = groupURL.appendingPathComponent("demo.mp4")! as NSURL
+        
+        // let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        // let documentsDirectory = paths[0] as String
+        //let filePath : String = "\(groupURL)/\(fileName).mp4"
+
         return filePath
     }
     

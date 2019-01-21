@@ -16,6 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        //UserDefaults共享数据，但是只能是小数据，例如一些参数。
+        let defaultForExtension:UserDefaults! = UserDefaults(suiteName: "group.Alex.Replaykit2ForIOS11")
+        if(defaultForExtension != nil){
+            defaultForExtension.set("2014", forKey: "year")
+            defaultForExtension.synchronize()
+        }
+        
+        //获取分组的共享目录
+       // var groupURL: NSURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alex.Replaykit2ForIOS11")! as NSURL
+       // var fileURL: NSURL = groupURL.appendingPathComponent("demo.txt")! as NSURL
+
+
+        
+        
         return true
     }
 

@@ -32,6 +32,14 @@ class ViewController: UIViewController {
         
         status.text = "未获取到数据"
         
+        saveWithFile()
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0] as String
+       // let filePath : String = "\(documentsDirectory)/Replays/\(fileName).mp4"
+        print(paths)
+        print(documentsDirectory)
+        
     }
 
     @IBAction func start(_ sender: UIButton) {
@@ -45,6 +53,29 @@ class ViewController: UIViewController {
         }) { (error) in
             print("Recording Complete")
         }*/
+    }
+    
+    func saveWithFile() {
+        /// 1、获得沙盒的根路径
+        let home = NSHomeDirectory() as NSString;
+        /// 2、获得Documents路径，使用NSString对象的stringByAppendingPathComponent()方法拼接路径        l
+        let docPath = home.appendingPathComponent("Documents") as NSString;
+        /// 3、获取文本文件路径
+        let filePath = docPath.appendingPathComponent("data.txt");
+       // let filePath = "/var/mobile/Containers/Data/Application/445DFE65-A6BD-43DB-99BC-CFD5A2990F5F/Documents/data.plist";
+        let dataSource = NSMutableArray();
+        dataSource.add("衣带渐宽终不悔");
+        dataSource.add("为伊消得人憔悴");
+        dataSource.add("故国不堪回首明月中");
+        dataSource.add("人生若只如初见");
+        dataSource.add("暮然回首，那人却在灯火阑珊处");
+        // 4、将数据写入文件中
+        dataSource.write(toFile: filePath, atomically: true);
+        print(home)
+        print(docPath)
+        print(filePath);
+        //file:///private/var/mobile/Containers/Data/Application/445DFE65-A6BD-43DB-99BC-CFD5A2990F5F/Documents/Replays/coolScreenRecording9378.mp4
+        
     }
     
     

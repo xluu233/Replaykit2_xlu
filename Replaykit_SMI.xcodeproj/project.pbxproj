@@ -74,6 +74,7 @@
 		6243C50021E87C9100ADDA74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6243C50E21E87C9D00ADDA74 /* siliconmotionSetupUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotionSetupUI.entitlements; sourceTree = "<group>"; };
 		6243C50F21E87CA600ADDA74 /* siliconmotion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotion.entitlements; sourceTree = "<group>"; };
+		62A0B93221F176B50045F76C /* siliconmotion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "siliconmotion-Bridging-Header.h"; sourceTree = "<group>"; };
 		62D4C69221F07D1A00EF4489 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		62E6762C21EDBE6200E24A55 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,6 +159,7 @@
 				6243C4F221E87C9100ADDA74 /* SampleHandler.swift */,
 				6243C4F421E87C9100ADDA74 /* Info.plist */,
 				62D4C69221F07D1A00EF4489 /* FileUtil.swift */,
+				62A0B93221F176B50045F76C /* siliconmotion-Bridging-Header.h */,
 			);
 			path = siliconmotion;
 			sourceTree = "<group>";
@@ -258,6 +260,7 @@
 					};
 					6243C4EC21E87C9100ADDA74 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -588,6 +591,7 @@
 		6243C50B21E87C9100ADDA74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = siliconmotion/siliconmotion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JAGYSS7E9A;
@@ -600,6 +604,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Alex.Replaykit2ForIOS11.siliconmotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "siliconmotion/siliconmotion-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -608,6 +614,7 @@
 		6243C50C21E87C9100ADDA74 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = siliconmotion/siliconmotion.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JAGYSS7E9A;
@@ -620,6 +627,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Alex.Replaykit2ForIOS11.siliconmotion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "siliconmotion/siliconmotion-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
