@@ -35,6 +35,21 @@ class SampleHandler: RPBroadcastSampleHandler {
             print(result)
         }*/
     
+        /*
+        //这个也可以哟
+        let shareDefaults = UserDefaults(suiteName: "group.Alex.Replaykit2ForIOS11")
+        shareDefaults?.set("这是我在groups中缓存的信息", forKey: "group")
+        shareDefaults?.synchronize()*/
+        
+        //1读取图片
+        let path = Bundle.main.path(forResource: "xixi", ofType: "jpg")
+        let data = NSData(contentsOfFile: path!)
+        //2 读取共享文件夹路径
+        let sharePath = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.heima")?.path
+        let filePath = (sharePath! as NSString).appendingPathComponent("xixi.png")
+        //3 复制图片到共享文件夹路径
+        FileManager.default.createFile(atPath: filePath, contents: data! as Data, attributes: nil)
+        
         
         //saveWithFile()
     }
@@ -57,18 +72,10 @@ class SampleHandler: RPBroadcastSampleHandler {
         print(home)
         print(docPath)
         print(filePath);
-        //file:///private/var/mobile/Containers/Data/Application/445DFE65-A6BD-43DB-99BC-CFD5A2990F5F/Documents/Replays/coolScreenRecording9378.mp4
         
     }
     
-    /*
-     file:///private/var/mobile/Containers/Data/PluginKitPlugin/9035A4B2-2841-449D-AC93-B32AEDBAC875/Documents/ReplayShare/coolScreenRecording1190.mp4, file:///private/var/mobile/Containers/Data/PluginKitPlugin/9035A4B2-2841-449D-AC93-B32AEDBAC875/Documents/ReplayShare/coolScreenRecording5148.mp4, file:///private/var/mobile/Containers/Data/PluginKitPlugin/9035A4B2-2841-449D-AC93-B32AEDBAC875/Documents/ReplayShare/coolScreenRecording5227.mp4, file:///private/var/mobile/Containers/Data/PluginKitPlugin/9035A4B2-2841-449D-AC93-B32AEDBAC875/Documents/ReplayShare/coolScreenRecording7368.mp4, file:///private/var/mobile/Containers/Data/PluginKitPlugin/9035A4B2-2841-449D-AC93-B32AEDBAC875/Documents/ReplayShare/coolScreenRecording8452.mp4, file:///private/var/mobile/Containers/Data/PluginKitPlugin/9035A4B2-2841-449D-AC93-B32AEDBAC875/Documents/ReplayShare/coolScreenRecording8557.mp4
-     */
-    
-    
-    /*
- [file:///private/var/mobile/Containers/Data/Application/85CA32DD-3842-4A18-A21F-14F4B7F0F9CD/Documents/Replays/coolScreenRecording8099.mp4, file:///private/var/mobile/Containers/Data/Application/85CA32DD-3842-4A18-A21F-14F4B7F0F9CD/Documents/Replays/coolScreenRecording9102.mp4]
- */
+
     override func broadcastPaused() {
         // User has requested to pause the broadcast. Samples will stop being delivered.
         //用户请求暂停广播。样品将停止发货。
@@ -92,8 +99,12 @@ class SampleHandler: RPBroadcastSampleHandler {
             print(ReplayFileUtil.fetchAllReplays())
             print("已停止录制")
         }
+        
     }
     
+
+
+
     
     //样本数据：CMSampleBuffer   样本数据类型：PRSampleBufferType
     override func processSampleBuffer(_ sampleBuffer: CMSampleBuffer, with sampleBufferType: RPSampleBufferType) {
@@ -105,12 +116,7 @@ class SampleHandler: RPBroadcastSampleHandler {
             n = n + 1
             print("第", n, "帧")
             
-            /*
-            startRecording(withFileName: "coolScreenRecording\(randomNumber)", sample: CMSampleBuffer, bufferType:RPSampleBufferType.video,recordingHandler: {(error) in
-                print("正在录制")
-            })*/
-         
-            
+ 
             let fileURL = URL(fileURLWithPath: ReplayFileUtil.filePath("coolScreenRecording\(randomNumber)"))
             assetWriter = try! AVAssetWriter(outputURL: fileURL, fileType: AVFileType.mp4)
             let videoOutputSettings: Dictionary<String, Any> = [
@@ -126,8 +132,6 @@ class SampleHandler: RPBroadcastSampleHandler {
             videoInput.expectsMediaDataInRealTime = true
             assetWriter.add(videoInput)
             
-            
-            //file:///private/var/mobile/Containers/Data/PluginKitPlugin/7ACAB9B7-533E-4213-B914-709E9A607E69/Documents/ReplayShare/coolScreenRecording9300.mp4,
             if CMSampleBufferDataIsReady(sampleBuffer)
             {
                 if self.assetWriter.status == AVAssetWriter.Status.unknown
@@ -144,25 +148,8 @@ class SampleHandler: RPBroadcastSampleHandler {
                     self.videoInput.append(sampleBuffer)
                 }
             }
-            
-            /*
-            if self.assetWriter.status == AVAssetWriter.Status.unknown
-            {
-                print("正在录制")
-                self.assetWriter.startWriting()
-                self.assetWriter.startSession(atSourceTime: CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
-            }
-            if self.assetWriter.status == AVAssetWriter.Status.failed {
-                print("Error occured, status = \(self.assetWriter.status.rawValue), \(self.assetWriter.error!.localizedDescription) \(String(describing: self.assetWriter.error))")
-                return
-            }
-            
-            if self.videoInput.isReadyForMoreMediaData
-            {
-                self.videoInput.append(sampleBuffer)
-            }*/
-            
-            
+
+ 
             break
         case RPSampleBufferType.audioApp:
             // Handle audio sample buffer for app audio
@@ -177,66 +164,6 @@ class SampleHandler: RPBroadcastSampleHandler {
         }
     }
     
-    /*
-    func startRecording(withFileName fileName: String, sample:CMSampleBuffer,bufferType: RPSampleBufferType,recordingHandler:@escaping (Error?)-> Void)
-    {
-        if #available(iOS 11.0, *)
-        {
-            let fileURL = URL(fileURLWithPath: ReplayFileUtil.filePath(fileName))
-            assetWriter = try! AVAssetWriter(outputURL: fileURL, fileType: AVFileType.mp4)
-            let videoOutputSettings: Dictionary<String, Any> = [
-                AVVideoCodecKey : AVVideoCodecType.h264,
-                //AVVideoWidthKey : 1080,
-                //AVVideoHeightKey : 1920
-                //宽度和高度
-                AVVideoWidthKey : UIScreen.main.bounds.size.width,
-                AVVideoHeightKey : UIScreen.main.bounds.size.height
-            ];
-            
-            videoInput  = AVAssetWriterInput (mediaType: AVMediaType.video, outputSettings: videoOutputSettings)
-            videoInput.expectsMediaDataInRealTime = true
-            assetWriter.add(videoInput)
-            
-            
-            if CMSampleBufferDataIsReady(sample)
-            {
-                if self.assetWriter.status == AVAssetWriter.Status.unknown
-                {
-                    self.assetWriter.startWriting()
-                    self.assetWriter.startSession(atSourceTime: CMSampleBufferGetPresentationTimeStamp(sample))
-                }
-                if self.assetWriter.status == AVAssetWriter.Status.failed {
-                    print("Error occured, status = \(self.assetWriter.status.rawValue), \(self.assetWriter.error!.localizedDescription) \(String(describing: self.assetWriter.error))")
-                    return
-                }
-                if (bufferType == .video)
-                {
-                    if self.videoInput.isReadyForMoreMediaData
-                    {
-                        self.videoInput.append(sample)
-                    }
-                }
-            }
-        }
-    }
-    */
-    /*
-    func stopRecording(handler: @escaping (Error?) -> Void)
-    {
-        if #available(iOS 11.0, *)
-        {
-            RPScreenRecorder.shared().stopCapture
-                {    (error) in
-                    handler(error)
-                    self.assetWriter.finishWriting
-                        {
-                            print(ReplayFileUtil.fetchAllReplays())
-                    }
-            }
-        } else {
-            // Fallback on earlier versions
-            //print("存储失败？")
-        }
-    }*/
-    
+   
+ 
 }

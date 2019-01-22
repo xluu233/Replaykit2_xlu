@@ -200,6 +200,59 @@ class ViewController: UIViewController {
     }
     
 
+    @IBAction func save_image(_ sender: UIButton) {
+       // UIImageWriteToSavedPhotosAlbum(vedio_first, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        //saveBtnClick()
+        
+        /*
+        let shareDefault = UserDefaults(suiteName: "group.Alex.Replaykit2ForIOS11")
+        shareDefault?.synchronize()
+        status.text = shareDefault?.string(forKey: "group")*/
+        
+        //1 读取共享文件夹
+        let sharePath = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alex.Replaykit2ForIOS11")?.path
+        //2 拼接路径
+        let filePath = (sharePath! as NSString).appendingPathComponent("xixi.png")
+        //3 复制
+        //vedio_first.setImageData(NSData(contentsOfFile: filePath))
+    
+        let data = try? Data(NSData(contentsOfFile: filePath) as Data)
+        if data != nil {
+            let image = UIImage(data: data!)
+            vedio_first.image = image
+        }
+        
+    }
+    
+    //NSData * UIImageJPEGRepresentation(UIImage *image, CGFloat compressionQuality);
+    //func jpegData(compressionQuality: CGFloat) -> Data?
+    
+    //将view转成图片并保存相册
+    @objc func saveBtnClick(){
+        let frame = vedio_first.frame
+        UIGraphicsBeginImageContext(frame.size)
+        vedio_first.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        self.loadImage(image: image!)
+    }
+    
+    //保存图片
+    func loadImage(image:UIImage){
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(self.image(image:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @objc func image(image: UIImage, didFinishSavingWithError: NSError?,contextInfo: AnyObject)
+    {
+        if didFinishSavingWithError != nil
+        {
+            print("error!")
+            return
+        }
+        
+        print("保存成功")
+    }
+    
     
 }
 

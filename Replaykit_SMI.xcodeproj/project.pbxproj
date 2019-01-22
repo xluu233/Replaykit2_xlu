@@ -20,6 +20,7 @@
 		6243C50321E87C9100ADDA74 /* siliconmotionSetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6243C4F921E87C9100ADDA74 /* siliconmotionSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6243C50621E87C9100ADDA74 /* siliconmotion.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6243C4ED21E87C9100ADDA74 /* siliconmotion.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		628E1A7421F0392600F2BE46 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6762C21EDBE6200E24A55 /* FileUtil.swift */; };
+		629F879B21F71B23000EABD2 /* xixi.png in Resources */ = {isa = PBXBuildFile; fileRef = 629F879A21F71B23000EABD2 /* xixi.png */; };
 		62D4C69321F07D1A00EF4489 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D4C69221F07D1A00EF4489 /* FileUtil.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		6243C50021E87C9100ADDA74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6243C50E21E87C9D00ADDA74 /* siliconmotionSetupUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotionSetupUI.entitlements; sourceTree = "<group>"; };
 		6243C50F21E87CA600ADDA74 /* siliconmotion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotion.entitlements; sourceTree = "<group>"; };
+		629F879A21F71B23000EABD2 /* xixi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xixi.png; path = ../../xixi.png; sourceTree = "<group>"; };
 		62A0B93221F176B50045F76C /* siliconmotion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "siliconmotion-Bridging-Header.h"; sourceTree = "<group>"; };
 		62D4C69221F07D1A00EF4489 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		62E6762C21EDBE6200E24A55 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		6243C4F121E87C9100ADDA74 /* siliconmotion */ = {
 			isa = PBXGroup;
 			children = (
+				629F879A21F71B23000EABD2 /* xixi.png */,
 				6243C50F21E87CA600ADDA74 /* siliconmotion.entitlements */,
 				6243C4F221E87C9100ADDA74 /* SampleHandler.swift */,
 				6243C4F421E87C9100ADDA74 /* Info.plist */,
@@ -312,6 +315,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				629F879B21F71B23000EABD2 /* xixi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
