@@ -7,17 +7,17 @@
 //
 
 import UIKit
-
 import Foundation
 import ReplayKit
 import AVKit
-
 
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var vedio_first: UIImageView!
     @IBOutlet weak var status: UILabel!
+    
+
     
     @IBOutlet weak var first_image: UIImageView!
     
@@ -32,13 +32,9 @@ class ViewController: UIViewController {
         
         status.text = "未获取到数据"
         
-        saveWithFile()
+      //  saveWithFile()
         
-        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
-        let documentsDirectory = paths[0] as String
-       // let filePath : String = "\(documentsDirectory)/Replays/\(fileName).mp4"
-        print(paths)
-        print(documentsDirectory)
+
         
     }
 
@@ -197,6 +193,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func get_first_image(_ sender: UIButton) {
+        
+
     }
     
 
@@ -212,14 +210,15 @@ class ViewController: UIViewController {
         //1 读取共享文件夹
         let sharePath = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alex.Replaykit2ForIOS11")?.path
         //2 拼接路径
-        let filePath = (sharePath! as NSString).appendingPathComponent("xixi.png")
+        let filePath = (sharePath! as NSString).appendingPathComponent("coolScreenRecording1765.mp4")
         //3 复制
         //vedio_first.setImageData(NSData(contentsOfFile: filePath))
     
         let data = try? Data(NSData(contentsOfFile: filePath) as Data)
         if data != nil {
-            let image = UIImage(data: data!)
-            vedio_first.image = image
+            print("获取到数据")
+            //let image = UIImage(data: data!)
+            //vedio_first.image = image
         }
         
     }
@@ -251,6 +250,59 @@ class ViewController: UIViewController {
         }
         
         print("保存成功")
+    }
+    
+    
+    @IBAction func play_video(_ sender: UIButton) {
+        
+        //读取本地路径
+        /*
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let documentsDirectory = paths[0] as String
+        let filePath : String = "\(documentsDirectory)/Replays/coolScreenRecording7742.mp4"
+        print(filePath)*/
+        
+        
+        let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alex.Replaykit2ForIOS11")
+        let logsPath = containerURL!.appendingPathComponent("ShareGroup")
+        print(logsPath.path);
+      //  let filePath : String = "\(logsPath.path)/coolScreenRecording\(randomNumber).mp4"
+        let filePath : String = "\(logsPath.path)/coolScreenRecording4828.mp4"
+        print(filePath)
+        
+
+        ///private/var/mobile/Containers/Shared/AppGroup/0066FD3B-8028-4B96-8E9A-5E17B13EFE98/ShareGroup/coolScreenRecording770.mp4
+        // file:///private/var/mobile/Containers/Shared/AppGroup/0066FD3B-8028-4B96-8E9A-5E17B13EFE98/ShareGroup/coolScreenRecording770.mp4
+        //coolScreenRecording2813
+        
+        //定义一个视频文件路径
+       //let filePath = Bundle.main.path(forResource: "video4", ofType: "mp4")
+       // print(filePath!)
+        let videoURL = URL(fileURLWithPath: filePath)
+        //定义一个视频播放器，通过本地文件路径初始化
+        let player = AVPlayer(url: videoURL)
+        //设置大小和位置（全屏）
+        let playerLayer = AVPlayerLayer(player: player)
+        playerLayer.frame = self.view.bounds
+        //添加到界面上
+        self.view.layer.addSublayer(playerLayer)
+        //开始播放
+        player.play()
+        
+        
+        /*
+         //遍历本地视频目录
+         let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+         let replayPath = documentsDirectory?.appendingPathComponent("/Replays")
+         let directoryContents = try! FileManager.default.contentsOfDirectory(at: replayPath!, includingPropertiesForKeys: nil, options: [])
+         print(directoryContents)
+         */
+        
+        /*
+         //播放网络视频
+         let playerView = CAplayerView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 250), theUrl: URL(string: "https://ksv-video-publish.cdn.bcebos.com/08df4e2d4693fd903134cd307f1df9db354d14e2.mp4?auth_key=1550653931-0-0-2d5ca04bdd8d935882ecb66fdaa42157")!)
+         playerView.backgroundColor = UIColor.black
+         self.view.addSubview(playerView)*/
     }
     
     

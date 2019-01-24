@@ -12,6 +12,9 @@ import UIKit
 import Foundation
 import AVKit
 
+
+import AssetsLibrary
+
 class SampleHandler: RPBroadcastSampleHandler {
 
     var n = 0
@@ -41,16 +44,7 @@ class SampleHandler: RPBroadcastSampleHandler {
         shareDefaults?.set("这是我在groups中缓存的信息", forKey: "group")
         shareDefaults?.synchronize()*/
         
-        //1读取图片
-        let path = Bundle.main.path(forResource: "xixi", ofType: "jpg")
-        let data = NSData(contentsOfFile: path!)
-        //2 读取共享文件夹路径
-        let sharePath = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.heima")?.path
-        let filePath = (sharePath! as NSString).appendingPathComponent("xixi.png")
-        //3 复制图片到共享文件夹路径
-        FileManager.default.createFile(atPath: filePath, contents: data! as Data, attributes: nil)
-        
-        
+       
         //saveWithFile()
     }
     
@@ -115,6 +109,9 @@ class SampleHandler: RPBroadcastSampleHandler {
             // 得到YUV数据
             n = n + 1
             print("第", n, "帧")
+            
+            //extension中保存时不能阻塞委托的方法
+            //待改进
             
  
             let fileURL = URL(fileURLWithPath: ReplayFileUtil.filePath("coolScreenRecording\(randomNumber)"))

@@ -19,8 +19,9 @@
 		6243C4FF21E87C9100ADDA74 /* BroadcastSetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6243C4FE21E87C9100ADDA74 /* BroadcastSetupViewController.swift */; };
 		6243C50321E87C9100ADDA74 /* siliconmotionSetupUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6243C4F921E87C9100ADDA74 /* siliconmotionSetupUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6243C50621E87C9100ADDA74 /* siliconmotion.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6243C4ED21E87C9100ADDA74 /* siliconmotion.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6270049821F8170F00BEB077 /* Avplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270049721F8170F00BEB077 /* Avplayer.swift */; };
+		6275585021F9999B008138DA /* video4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6275584F21F9999B008138DA /* video4.mp4 */; };
 		628E1A7421F0392600F2BE46 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6762C21EDBE6200E24A55 /* FileUtil.swift */; };
-		629F879B21F71B23000EABD2 /* xixi.png in Resources */ = {isa = PBXBuildFile; fileRef = 629F879A21F71B23000EABD2 /* xixi.png */; };
 		62D4C69321F07D1A00EF4489 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D4C69221F07D1A00EF4489 /* FileUtil.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,7 +76,8 @@
 		6243C50021E87C9100ADDA74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6243C50E21E87C9D00ADDA74 /* siliconmotionSetupUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotionSetupUI.entitlements; sourceTree = "<group>"; };
 		6243C50F21E87CA600ADDA74 /* siliconmotion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotion.entitlements; sourceTree = "<group>"; };
-		629F879A21F71B23000EABD2 /* xixi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = xixi.png; path = ../../xixi.png; sourceTree = "<group>"; };
+		6270049721F8170F00BEB077 /* Avplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avplayer.swift; sourceTree = "<group>"; };
+		6275584F21F9999B008138DA /* video4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video4.mp4; path = ../video4.mp4; sourceTree = "<group>"; };
 		62A0B93221F176B50045F76C /* siliconmotion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "siliconmotion-Bridging-Header.h"; sourceTree = "<group>"; };
 		62D4C69221F07D1A00EF4489 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		62E6762C21EDBE6200E24A55 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		6243C4CA21E87BB100ADDA74 = {
 			isa = PBXGroup;
 			children = (
+				6275584F21F9999B008138DA /* video4.mp4 */,
 				6243C4D521E87BB100ADDA74 /* Replaykit_SMI */,
 				6243C4F121E87C9100ADDA74 /* siliconmotion */,
 				6243C4FD21E87C9100ADDA74 /* siliconmotionSetupUI */,
@@ -141,6 +144,7 @@
 				6243C4DD21E87BB200ADDA74 /* Assets.xcassets */,
 				6243C4DF21E87BB200ADDA74 /* LaunchScreen.storyboard */,
 				6243C4E221E87BB200ADDA74 /* Info.plist */,
+				6270049721F8170F00BEB077 /* Avplayer.swift */,
 			);
 			path = Replaykit_SMI;
 			sourceTree = "<group>";
@@ -157,7 +161,6 @@
 		6243C4F121E87C9100ADDA74 /* siliconmotion */ = {
 			isa = PBXGroup;
 			children = (
-				629F879A21F71B23000EABD2 /* xixi.png */,
 				6243C50F21E87CA600ADDA74 /* siliconmotion.entitlements */,
 				6243C4F221E87C9100ADDA74 /* SampleHandler.swift */,
 				6243C4F421E87C9100ADDA74 /* Info.plist */,
@@ -305,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6275585021F9999B008138DA /* video4.mp4 in Resources */,
 				6243C4E121E87BB200ADDA74 /* LaunchScreen.storyboard in Resources */,
 				6243C4DE21E87BB200ADDA74 /* Assets.xcassets in Resources */,
 				6243C4DC21E87BB100ADDA74 /* Main.storyboard in Resources */,
@@ -315,7 +319,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				629F879B21F71B23000EABD2 /* xixi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				628E1A7421F0392600F2BE46 /* FileUtil.swift in Sources */,
+				6270049821F8170F00BEB077 /* Avplayer.swift in Sources */,
 				6243C4D921E87BB100ADDA74 /* ViewController.swift in Sources */,
 				6243C4D721E87BB100ADDA74 /* AppDelegate.swift in Sources */,
 			);
