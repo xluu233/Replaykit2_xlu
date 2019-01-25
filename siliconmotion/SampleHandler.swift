@@ -24,7 +24,6 @@ class SampleHandler: RPBroadcastSampleHandler {
     let randomNumber = arc4random_uniform(9999);
     
     
-    
     override func broadcastStarted(withSetupInfo setupInfo: [String : NSObject]?) {
         // User has requested to start the broadcast. Setup info from the UI extension can be supplied but optional.
         //用户已请求启动广播。可以提供来自UI扩展的设置信息，但这是可选的。
@@ -46,6 +45,10 @@ class SampleHandler: RPBroadcastSampleHandler {
         
        
         //saveWithFile()
+     
+       // TranVideo.Ready()
+        Ready()
+        
     }
     
     func saveWithFile() {
@@ -86,14 +89,12 @@ class SampleHandler: RPBroadcastSampleHandler {
         // User has requested to finish the broadcast.
         //用户已请求完成广播。
         print("broadcastfinished")
-        
-        
-        self.assetWriter.finishWriting
-        {
-            print(ReplayFileUtil.fetchAllReplays())
-            print("已停止录制")
+      //  TranVideo.stop()
+        assetWriter.finishWriting
+            {
+                print(ReplayFileUtil.fetchAllReplays())
+                print("已停止录制")
         }
-        
     }
     
 
@@ -113,9 +114,35 @@ class SampleHandler: RPBroadcastSampleHandler {
             //extension中保存时不能阻塞委托的方法
             //待改进
             
- 
+          //  TranVideo.start(sampleBuffer)
+            
+            if CMSampleBufferDataIsReady(sampleBuffer)
+            {
+                if assetWriter.status == AVAssetWriter.Status.unknown
+                {
+                    assetWriter.startWriting()
+                    assetWriter.startSession(atSourceTime: CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
+                    print("startWriting")
+                }
+                
+                if assetWriter.status == AVAssetWriter.Status.failed {
+                    print("Error occured, status = \(assetWriter.status.rawValue), \(assetWriter.error!.localizedDescription) \(String(describing: assetWriter.error))")
+                    return
+                }
+                
+                if videoInput.isReadyForMoreMediaData
+                {
+                    videoInput.append(sampleBuffer)
+                    print("appended")
+                }
+            }
+            
+  
+            
+            /*
             let fileURL = URL(fileURLWithPath: ReplayFileUtil.filePath("coolScreenRecording\(randomNumber)"))
             assetWriter = try! AVAssetWriter(outputURL: fileURL, fileType: AVFileType.mp4)
+            
             let videoOutputSettings: Dictionary<String, Any> = [
                 AVVideoCodecKey : AVVideoCodecType.h264,
                 //AVVideoWidthKey : 1080,
@@ -135,6 +162,7 @@ class SampleHandler: RPBroadcastSampleHandler {
                 {
                     self.assetWriter.startWriting()
                     self.assetWriter.startSession(atSourceTime: CMSampleBufferGetPresentationTimeStamp(sampleBuffer))
+                    print("正在录制")
                 }
                 if self.assetWriter.status == AVAssetWriter.Status.failed {
                     print("Error occured, status = \(self.assetWriter.status.rawValue), \(self.assetWriter.error!.localizedDescription) \(String(describing: self.assetWriter.error))")
@@ -144,7 +172,7 @@ class SampleHandler: RPBroadcastSampleHandler {
                 {
                     self.videoInput.append(sampleBuffer)
                 }
-            }
+            }*/
 
  
             break
@@ -162,5 +190,27 @@ class SampleHandler: RPBroadcastSampleHandler {
     }
     
    
- 
+    func Ready() {
+        
+        let fileURL = URL(fileURLWithPath: ReplayFileUtil.filePath("coolScreenRecording\(randomNumber)"))
+        assetWriter = try! AVAssetWriter(outputURL: fileURL, fileType: AVFileType.mp4)
+        
+        let videoOutputSettings: Dictionary<String, Any> = [
+            AVVideoCodecKey : AVVideoCodecType.h264,
+            //AVVideoWidthKey : 1080,
+            //AVVideoHeightKey : 1920
+            //宽度和高度
+            AVVideoWidthKey : UIScreen.main.bounds.size.width,
+            AVVideoHeightKey : UIScreen.main.bounds.size.height
+        ];
+        
+        videoInput  = AVAssetWriterInput (mediaType: AVMediaType.video, outputSettings: videoOutputSettings)
+        videoInput.expectsMediaDataInRealTime = true
+        assetWriter.add(videoInput)
+        
+        print(fileURL)
+        print("Ready")
+        
+    }
+    
 }

@@ -71,9 +71,8 @@ class ReplayFileUtil
        // let filePath : String = "\(fileURL)/\(fileName).mp4"
         
         let strSavePath : String =  self.createProjectDirectoryPath(path: "ShareGroup")
-        print(strSavePath)
         let filePath3 = "\(strSavePath)/\(fileName).mp4"
-        print(fileName)
+        print(filePath3)
         
         return filePath3
     }
@@ -92,6 +91,8 @@ class ReplayFileUtil
         let documentsDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alex.Replaykit2ForIOS11")
         let replayPath = documentsDirectory?.appendingPathComponent("/ShareGroup")
         let directoryContents = try! FileManager.default.contentsOfDirectory(at: replayPath!, includingPropertiesForKeys: nil, options: [])
+        print(directoryContents.count)
+        print(directoryContents)
         return directoryContents
     }
     

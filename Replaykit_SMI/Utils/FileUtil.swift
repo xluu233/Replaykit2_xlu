@@ -88,8 +88,8 @@ class ReplayFileUtil
         let documentsDirectory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alex.Replaykit2ForIOS11")
         let replayPath = documentsDirectory?.appendingPathComponent("/ShareGroup")
         let directoryContents = try! FileManager.default.contentsOfDirectory(at: replayPath!, includingPropertiesForKeys: nil, options: [])
-        print(directoryContents.count)
-        print(directoryContents.last!)
+       // print(directoryContents.count)
+        //print(directoryContents.last!)
         return directoryContents
     }
     

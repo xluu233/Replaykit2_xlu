@@ -22,6 +22,7 @@
 		6270049821F8170F00BEB077 /* Avplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6270049721F8170F00BEB077 /* Avplayer.swift */; };
 		6275585021F9999B008138DA /* video4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6275584F21F9999B008138DA /* video4.mp4 */; };
 		628E1A7421F0392600F2BE46 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E6762C21EDBE6200E24A55 /* FileUtil.swift */; };
+		629BEA9521FAAC92003DE69F /* TranVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 629BEA9421FAAC92003DE69F /* TranVideo.swift */; };
 		62D4C69321F07D1A00EF4489 /* FileUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D4C69221F07D1A00EF4489 /* FileUtil.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +79,7 @@
 		6243C50F21E87CA600ADDA74 /* siliconmotion.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = siliconmotion.entitlements; sourceTree = "<group>"; };
 		6270049721F8170F00BEB077 /* Avplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avplayer.swift; sourceTree = "<group>"; };
 		6275584F21F9999B008138DA /* video4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = video4.mp4; path = ../video4.mp4; sourceTree = "<group>"; };
+		629BEA9421FAAC92003DE69F /* TranVideo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranVideo.swift; sourceTree = "<group>"; };
 		62A0B93221F176B50045F76C /* siliconmotion-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "siliconmotion-Bridging-Header.h"; sourceTree = "<group>"; };
 		62D4C69221F07D1A00EF4489 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
 		62E6762C21EDBE6200E24A55 /* FileUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUtil.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				6243C4F421E87C9100ADDA74 /* Info.plist */,
 				62D4C69221F07D1A00EF4489 /* FileUtil.swift */,
 				62A0B93221F176B50045F76C /* siliconmotion-Bridging-Header.h */,
+				629BEA9421FAAC92003DE69F /* TranVideo.swift */,
 			);
 			path = siliconmotion;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 			files = (
 				6243C4F321E87C9100ADDA74 /* SampleHandler.swift in Sources */,
 				62D4C69321F07D1A00EF4489 /* FileUtil.swift in Sources */,
+				629BEA9521FAAC92003DE69F /* TranVideo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

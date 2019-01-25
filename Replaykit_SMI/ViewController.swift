@@ -119,6 +119,7 @@ class ViewController: UIViewController {
                     {
                         self.assetWriter.startWriting()
                         self.assetWriter.startSession(atSourceTime: CMSampleBufferGetPresentationTimeStamp(sample))
+                        print("startWriting")
                     }
                     if self.assetWriter.status == AVAssetWriter.Status.failed {
                         print("Error occured, status = \(self.assetWriter.status.rawValue), \(self.assetWriter.error!.localizedDescription) \(String(describing: self.assetWriter.error))")
@@ -129,6 +130,7 @@ class ViewController: UIViewController {
                         if self.videoInput.isReadyForMoreMediaData
                         {
                             self.videoInput.append(sample)
+                            print("appended")
                         }
                     }
                 }
@@ -265,9 +267,9 @@ class ViewController: UIViewController {
         
         let containerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.Alex.Replaykit2ForIOS11")
         let logsPath = containerURL!.appendingPathComponent("ShareGroup")
-        print(logsPath.path);
-      //  let filePath : String = "\(logsPath.path)/coolScreenRecording\(randomNumber).mp4"
-        let filePath : String = "\(logsPath.path)/coolScreenRecording4828.mp4"
+       // print(logsPath.path);
+       // let filePath : String = "\(logsPath.path)/coolScreenRecording\(randomNumber).mp4"
+        let filePath : String = "\(logsPath.path)/coolScreenRecording8001.mp4"
         print(filePath)
         
 

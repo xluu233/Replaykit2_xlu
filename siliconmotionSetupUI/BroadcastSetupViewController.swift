@@ -20,6 +20,7 @@ class BroadcastSetupViewController: UIViewController {
         
         // Dictionary with setup information that will be provided to broadcast extension when broadcast is started
         // 具有设置信息的Dictionary，这些设置信息将在广播启动时提供给广播扩展
+        // 所有需要的信息都可以通过setupInfo传递到Extension 的 SampleHandler里
         let setupInfo: [String : NSCoding & NSObjectProtocol] = ["broadcastName": "example" as NSCoding & NSObjectProtocol]
         
         // Tell ReplayKit that the extension is finished setting up and can begin broadcasting
