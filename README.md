@@ -1,4 +1,4 @@
-# Replaykit_SMI
+# Replaykit
 
 #### 基于IOS11和Replaykit2的录屏应用
 
